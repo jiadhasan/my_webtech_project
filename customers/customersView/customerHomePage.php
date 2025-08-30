@@ -1,0 +1,1 @@
+<h1>this is customers home page</h1>
