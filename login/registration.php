@@ -1,75 +1,64 @@
 <?php
-// Start PHP validation before HTML
+@include '../db/db.php';
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name     = trim($_POST['name']);
-    $email    = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm  = trim($_POST['confirm_password']);
+    $name      = trim($_POST['name']);
+    $email     = trim($_POST['email']);
+    $password  = trim($_POST['password']);
+    $cPassword = trim($_POST['cPassword']);
 
-    // 1. Name validation (only lowercase letters)
-    if (empty($name)) {
-        $errors[] = "Name cannot be blank.";
-    } elseif (!preg_match("/^[a-z]+$/", $name)) {
-        $errors[] = "Name must contain only lowercase letters.";
-    }
-
-    // 2. Email validation
-    if (empty($email)) {
-        $errors[] = "Email cannot be blank.";
+    if (empty($name) || empty($email) || empty($password) || empty($cPassword)) {
+        $errors[] = "All fields are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email. Must contain '@' and '.'";
-    }
-
-    // 3. Password validation
-    if (empty($password) || empty($confirm)) {
-        $errors[] = "Password fields cannot be blank.";
-    } elseif (!preg_match("/^[0-9]+$/", $password)) {
-        $errors[] = "Password must contain only digits.";
-    } elseif ($password !== $confirm) {
+        $errors[] = "Invalid email format.";
+    } elseif ($password !== $cPassword) {
         $errors[] = "Passwords do not match.";
     }
 
-    // If no errors → redirect
     if (empty($errors)) {
-        header("Location:/my_webtech_project/customers/customersView/customerHomePage.php");
-        exit();
+        $check = mysqli_query($conn, "SELECT * FROM registration WHERE email='$email'");
+        if (mysqli_num_rows($check) > 0) {
+            $errors[] = "Email already registered.";
+        } else {
+            $user_type = ($email === "admin@gmail.com" && $password === "1234") ? "admin" : "user";
+            $insert = mysqli_query($conn, "INSERT INTO registration (name, email, password, cPassword, user_type, user_status) 
+                                           VALUES ('$name', '$email', '$password', '$cPassword', '$user_type', 'active')");
+            if ($insert) {
+                header("Location: login.php");
+                exit();
+            } else {
+                $errors[] = "Failed to register. Try again.";
+            }
+        }
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="styles/registration.css">
 </head>
 <body>
-    <div id="container">
-        <div><h1>REGISTRATION NOW</h1></div>
-        <div>
-            <!-- Show errors -->
-            <?php
-            if (!empty($errors)) {
-                foreach ($errors as $error) {
-                    echo "<p style='color:red;'>$error</p>";
-                }
+    <div id="register-container">
+        <h2>Register Now</h2>
+        <?php
+        if (!empty($errors)) {
+            foreach ($errors as $error) {
+                echo "<p class='error'>$error</p>";
             }
-            ?>
-
-            <!-- Registration Form -->
-            <form action="" method="POST">
-                <input placeholder="Enter Name" type="text" name="name" value="<?php echo isset($name) ? htmlspecialchars($name) : ''; ?>"><br>
-                <input placeholder="Enter E-mail" type="email" name="email" value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>"><br>
-                <input placeholder="Enter Password" type="password" name="password"><br>
-                <input placeholder="Confirm Password" type="password" name="confirm_password"><br>
-                
-                <button type="submit" name="submit">Register</button> <br>
-                <p>Already have an account? <a id="text" href="login.php">Login now</a></p>
-            </form>
-        </div>
+        }
+        ?>
+        <form action="" method="POST">
+            <input type="text" name="name" placeholder="Enter Name"><br>
+            <input type="email" name="email" placeholder="Enter Email"><br>
+            <input type="password" name="password" placeholder="Enter Password"><br>
+            <input type="password" name="cPassword" placeholder="Confirm Password"><br>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="login.php">Login</a></p>
+        </form>
     </div>
 </body>
 </html>

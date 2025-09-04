@@ -40,12 +40,16 @@ a{
    
 }
 a:hover{
-    color: rgb(84, 255, 27);
+    color: blueviolet;
+    cursor: pointer;
+   
 }
 #name{
    margin-left: 80px;
    margin-top: 12px;
-   font-size: larger;
+   font-size: 25px;
    font-weight: bolder;
    font-family:monospace;
+    color: rgb(227, 135, 189);
+   
 }

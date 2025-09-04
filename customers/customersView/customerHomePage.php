@@ -12,6 +12,7 @@
         <div id ="flex">
                 <div id = "name">Sugar & Soure</div>
                 <div >
+                    
                     <ul>
                       <a href="">home</a>
                       <a href="">shop</a>

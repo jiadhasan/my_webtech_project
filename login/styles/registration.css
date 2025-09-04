@@ -1,45 +1,68 @@
-#container{
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-    border: 4px solid black;
-    box-shadow: 5px 5px 10px gray;
-    padding: 6px;
-    margin-top: 8px;
+#register-container {
+    background: #fff;
+    padding: 30px;
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     text-align: center;
-    width: 30%;
-    margin: 150px auto;
-     border-radius:  16px;
-     background-color: rgb(238, 224, 206);
-}
-input, button{
-    margin-top: 10px;
-    width: 70%;
-    border: 2px solid black;
-    padding: 5px;
-    font-weight: 500;
-    font-size: larger;
-    border-radius:  20px;
-
 }
 
-button{
-   background-color: rgb(40, 40, 248);
-    color: antiquewhite;
+#register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
-button:hover{
-     background-color: rgb(190, 190, 219);
-    color:black;
-    
+
+#register-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-#text{
+
+#register-container button {
+    width: 95%;
+    padding: 10px;
+    background: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#register-container button:hover {
+    background: #1e7e34;
+}
+
+#register-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#register-container a {
+    color: #28a745;
     text-decoration: none;
-    color: rgb(53, 85, 4);
-    font-weight: 300;
-    font-size: medium;
 }
-#text:hover{
-    text-decoration: none;
-    color: rgba(1, 0, 0, 0.463);
+
+#register-container a:hover {
+    text-decoration: underline;
 }
-h1{
-    color: rgba(1, 0, 0, 0.463);
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+h2{
+    text-align: center;
 }

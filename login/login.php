@@ -1,71 +1,59 @@
 <?php
+@include '../db/db.php';
+session_start();
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email    = trim($_POST['email']);
     $password = trim($_POST['pass']);
 
-    // 1. Check for empty fields
-    if (empty($email)) {
-        $errors[] = "Email cannot be blank.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email. Must contain '@' and '.'.";
-    }
+    if (empty($email) || empty($password)) {
+        $errors[] = "Email and Password required.";
+    } else {
+        $result = mysqli_query($conn, "SELECT * FROM registration WHERE email='$email' AND password='$password' AND user_status='active'");
+        if (mysqli_num_rows($result) == 1) {
+            $row = mysqli_fetch_assoc($result);
 
-    if (empty($password)) {
-        $errors[] = "Password cannot be blank.";
-    } elseif (!preg_match("/^[0-9]+$/", $password)) {
-        $errors[] = "Password must contain only digits.";
-    }
+            $_SESSION['user_id']   = $row['id'];
+            $_SESSION['user_name'] = $row['name'];
+            $_SESSION['user_type'] = $row['user_type'];
 
-    // 2. If no validation errors, check login credentials
-    if (empty($errors)) {
-        if ($email === "admin@gmail.com") {
-            if ($password === "1234") {
-                // Correct admin credentials
+            if ($row['user_type'] === "admin") {
                 header("Location:/my_webtech_project/admin/adminView/adminHomePage.php");
                 exit();
             } else {
-                // Admin email but wrong password → not allowed
-                $errors[] = "Invalid Admin credentials.";
+                header("Location:/my_webtech_project/customers/customersView/customerHomePage.php");
+                exit();
             }
         } else {
-            // Any other valid user → customer page
-            header("Location:/my_webtech_project/customers/customersView/customerHomePage.php");
-            exit();
+            $errors[] = "Invalid email or password.";
         }
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-    <div id="container">
-        <div><h1>LOGIN NOW</h1></div>
-        <div>
-            <!-- Show errors -->
-            <?php
-            if (!empty($errors)) {
-                foreach ($errors as $error) {
-                    echo "<p style='color:red;'>$error</p>";
-                }
+    <div id="login-container">
+        <h2>Login Now</h2>
+        <?php
+        if (!empty($errors)) {
+            foreach ($errors as $error) {
+                echo "<p class='error'>$error</p>";
             }
-            ?>
-
-            <!-- Login Form -->
-            <form action="" method="POST">
-                <input placeholder="Enter E-mail" type="email" name="email" value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>"> <br>
-                <input placeholder="Enter Password" type="password" name="pass"> <br>
-                <button type="submit" name="login">LOGIN NOW</button> <br>
-                <p>Don’t have an account? <a id="text" href="registration.php">Register now</a></p>
-            </form>
-        </div>
+        }
+        ?>
+        <form action="" method="POST">
+            <input type="email" name="email" placeholder="Enter E-mail"><br>
+            <input type="password" name="pass" placeholder="Enter Password"><br>
+            <button type="submit">LOGIN NOW</button><br>
+            <p>Don’t have an account? <a href="registration.php">Register now</a></p>
+        </form>
     </div>
 </body>
 </html>
