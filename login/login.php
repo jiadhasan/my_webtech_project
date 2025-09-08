@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_type'] = $row['user_type'];
 
             if ($row['user_type'] === "admin") {
-                header("Location:/my_webtech_project/admin/adminView/adminHomePage.php");
+                header("Location:/my_webtech_project/admin/adminView/admindashboard.php");
                 exit();
             } else {
                 header("Location:/my_webtech_project/customers/customersView/customerHomePage.php");

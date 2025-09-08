@@ -109,9 +109,9 @@ a:hover {
     justify-content:space-around;
 }
 .see-more-button{
-    background-color: rgb(86, 79, 79);
+    background-color: rgb(102, 97, 97);
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -122,17 +122,18 @@ a:hover {
     
 }
 .see-more-button:hover{
-    background-color: blueviolet;
+    background-color: rgb(180, 143, 215);
+    color: black;
 }
 /*footer part style*/
 .footer-container{
     background-color: rgb(50, 37, 73);
-    color: rgb(243, 255, 23);
+    color: rgb(240, 246, 128);
     text-align: center;
     padding: 60px;
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 92%;
     display: flex;
     justify-content:space-around;
     

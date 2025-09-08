@@ -19,8 +19,8 @@
                 </div>
                 <div>
                     <ul>
-                        <a href="">Products</a>
-                        <a href="">About</a>
+                        <a href="../login/items.php">Items</a>
+                        <a href="./about.php">About</a>
                         <a href="./login.php">Login</a>
                     </ul>
                 </div>       
@@ -36,7 +36,7 @@
 
     </div>
 
-     <h1 class="newpart">Our Products</h1>
+     <h1 class="newpart">Some of the delicious items we offers</h1>
 
     <div class = "flex-container">
                <div class = "card1">
@@ -69,25 +69,28 @@
                </div>
     </div>
 
-    <button type="submit" name = "submit" class = "see-more-button">See More</button>
-   
+    <button type="submit" name = "submit" ><a href="../login/items.php" class = "see-more-button">See More</a></button>
+
+    
+
+
 
     <footer>
         <div class="footer-container">
               <div>
-                <h3>Contact Us</h3>
-                <p>Email: info@sugarandsoure.com</p>
+                <h3>Contact Us</h3> <hr>
+                <p >Email: info@sugarandsoure.com</p>
               </div>
               <div>
-                <h3>Follow Us</h3>
+                <h3>Follow Us</h3> <hr>
                 <p>Facebook | Twitter | Instagram</p>
               </div>
               <div>
-                <h3>Address</h3>
+                <h3>Address</h3> <hr>
                 <p>123 Food St, Flavor Town, USA</p>
               </div>
               <div>
-                <h3>Opening Hours</h3>
+                <h3>Opening Hours</h3> <hr>
                 <p>Mon - Fri: 9 AM - 9 PM</p>
                 <p>Sat - Sun: 10 AM - 10 PM</p>
               </div>
