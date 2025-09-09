@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location:/my_webtech_project/admin/adminView/admindashboard.php");
                 exit();
             } else {
-                header("Location:/my_webtech_project/customers/customersView/customerHomePage.php");
+                header("Location:/my_webtech_project/customers/customerDashboard.php");
                 exit();
             }
         } else {

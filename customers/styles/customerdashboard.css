@@ -1,0 +1,80 @@
+/* Import navbar styles */
+@import url('customernavbar.css');
+
+/* Page background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+/* Grid container for cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Card content */
+.card-content {
+    padding: 15px;
+    text-align: center;  
+}
+
+
+.card-content h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.card-content p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.card-content .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(5, 6, 9);
+}
+
+/* Add to cart button */
+.add-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgb(112, 141, 255);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #4faa45;
+}

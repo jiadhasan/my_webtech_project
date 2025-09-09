@@ -12,7 +12,10 @@
         }
         .navbar {
             background-color: #e26161ff;
+            height:80px;
             overflow: hidden;
+             box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+
         }
         .navbar .nav-left {
             float: left;
@@ -57,7 +60,7 @@
       <li><a href="additem.php">Add Items</a></li>
       <li><a href="orders.php">Orders</a></li>
       <li><a href="customers.php">Customers</a></li>
-      <li><a href="logout.php">Logout</a></li>
+      <li><a href="/my_webtech_project/login/homepage.php">Logout</a></li>
     </ul>
   </div>
 </div>
