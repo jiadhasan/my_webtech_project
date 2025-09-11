@@ -1,0 +1,158 @@
+/* admindashboard.css */
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* Dark blue-gray */
+    padding: 15px 30px;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #3498db; /* Light blue on hover */
+}
+
+.navbar .restaurant-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Heading */
+h1 {
+    margin-top: 30px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Table styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+th {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Table cells */
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: #e8f6f9;
+}
+
+/* Image styling */
+img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+
+/* Action buttons */
+.action-btn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    margin: 0 2px;
+}
+
+.edit-btn {
+    background-color: #27ae60; /* Green */
+}
+
+.edit-btn:hover {
+    background-color: #2ecc71;
+}
+
+.delete-btn {
+    background-color: #c0392b; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+}
+
+/* Action buttons */
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Edit button - gradient green */
+.edit-btn {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+.edit-btn:hover {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Delete button - gradient red */
+.delete-btn {
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}

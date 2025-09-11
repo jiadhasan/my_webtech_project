@@ -1,3 +1,12 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['user_name'])) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +22,10 @@
   <div class="nav-right">
     <ul>
       <li><a href="customerDashboard.php">Home Page</a></li>
-      <li><a href="customerDashboard.php">Items</a></li>
-      <li><a href="orders.php">Orders</a></li>
-      <li><a href="/my_webtech_project/login/homepage.php">Logout</a></li>
+      <li><a href="items.php">Items</a></li>
+      <li><a href="orders.php">My Orders</a></li>
+      <li><a href="profile.php">Profile</a></li>
+      <li><a href="logout.php">Logout</a></li>
     </ul>
   </div>
 </div>
