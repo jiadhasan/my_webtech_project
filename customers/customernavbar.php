@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_name'])) {
     <ul>
       <li><a href="customerDashboard.php">Home Page</a></li>
       <li><a href="items.php">Items</a></li>
-      <li><a href="orders.php">My Orders</a></li>
+      <li><a href="order.php">My Orders</a></li>
       <li><a href="profile.php">Profile</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>

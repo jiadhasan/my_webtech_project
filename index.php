@@ -56,7 +56,7 @@
     </div>
 
     
-    <!-- Need design attention -->
+    
     <button type="submit" name = "submit" ><a href="items.php" class = "see-more-button">See More Items</a></button>
 
     

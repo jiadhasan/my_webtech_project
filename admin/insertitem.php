@@ -1,6 +1,9 @@
 <?php
+
 session_start();
+
 include('../db/db.php');
+
 if(isset($_POST['submit'])){
     $name = $_POST['item_name'];
     $desc = $_POST['item_description'];

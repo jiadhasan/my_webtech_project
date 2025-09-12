@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php
+ session_start(); 
 include('../db/db.php');
 // Check if the user is logged in
 if (!isset($_SESSION['user_name'])) {

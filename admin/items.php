@@ -1,4 +1,6 @@
 <?php include('../db/db.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
 <body>
 <?php include('navbar.php'); ?>
 
-<h1 style="text-align:center;">Items Dashboard</h1>
+<h1 style="text-align:center;">Items </h1>
 
 <table>
   <tr>
@@ -20,6 +22,8 @@
     <th>Image</th>
     <th>Actions</th>
   </tr>
+
+  
   <?php
   $sql = "SELECT * FROM items";
   $result = mysqli_query($conn, $sql);

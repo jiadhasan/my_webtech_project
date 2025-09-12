@@ -7,7 +7,7 @@ $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email    = trim($_POST['email']);
     $password = trim($_POST['pass']);
-
+                                                            
     if (empty($email) || empty($password)) {
         $errors[] = "Email and Password required.";
     } else {

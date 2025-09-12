@@ -9,7 +9,8 @@
 <body>
 <?php include('navbar.php'); ?>
 
-<h1 style="text-align:center; color: #333; font-size: 48px;">Welcome <?php echo $_SESSION['user_name']; ?></h1>
+<h1 style="text-align:center; color: #333; font-size: 48px;">Welcome Admin</h1>
 
 </body>
 </html>
+<!--<?php echo $_SESSION['user_name']; ?>-->
