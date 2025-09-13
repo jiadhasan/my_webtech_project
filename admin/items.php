@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
+  <title>Admin Items</title>
   <link rel="stylesheet" href="styles/admindashboard.css">
 </head>
 <body>

@@ -117,6 +117,7 @@ a:hover {
 .flex-container{
     display: flex;
     justify-content:space-around;
+    padding-top: 60px;
 }
 .see-more-button{
     background-color: rgb(102, 97, 97);
@@ -135,6 +136,8 @@ a:hover {
     background-color: rgb(180, 143, 215);
     color: black;
 }
+
+
 /*footer part style*/
 .footer-container{
     background-color: rgb(50, 37, 73);
@@ -146,6 +149,7 @@ a:hover {
     width: 92%;
     display: flex;
     justify-content:space-around;
+  
     
 }
 .footer-text{
@@ -153,3 +157,4 @@ a:hover {
     font-size: 18px;
     color: brown;
 }
+

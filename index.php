@@ -55,9 +55,13 @@
                </div>
     </div>
 
-    
-    
+
+    <div class="btn-margin">
+                
     <button type="submit" name = "submit" ><a href="items.php" class = "see-more-button">See More Items</a></button>
+    </div>
+    
+    
 
     
 
